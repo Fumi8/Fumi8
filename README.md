@@ -1,7 +1,7 @@
 - 👋 Hi, I’m @Fumi8
 - 👀 I’m interested in front-end
 - 🌱 I’m currently learning React
-- 💞️ I’m looking to collaborate on ..... maybe not yet. Cause I don’t have enough skil. hopefully sooooooon!
+- 💞️ I’m looking to collaborate on ..... maybe not yet. Cause don’t have enough skil. hopefully sooooooon!
 - 📫 How to reach me ...
 
 <!---
