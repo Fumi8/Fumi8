@@ -377,19 +377,19 @@ const AS_OF = "2026年11月時点";
     table(s, ["プラン", "対象", "月額の目安（1人あたり）", "Claude Code", "最低人数", "特徴"], [
       ["Pro", "個人", "$20（年払いで$17相当）", "○", "1名", "まず個人で試すのに最適"],
       ["Max", "個人（多く使う方）", "$100（Proの5倍の利用量）／上位$200【要確認：名称・倍率】", "○", "1名", "長時間・大量の作業向け"],
-      ["Team Standard", "法人", "$25（年払いで$20）", "○", "2名〜（上限150名）", "管理機能。入力内容を学習に使わない（既定）"],
-      ["Team Premium", "法人", "$125（年払いで$100）", "○", "同上", "Standardの5倍の利用量。席の混在可"],
-      ["Enterprise", "法人（大規模）", "席料$20（年払い）＋利用量（API料金）", "○", "20名〜", "SSO・監査ログなど高度な管理"],
-      ["API 従量課金", "開発・自動化", "使った分だけ（例：Sonnet 5.5 は100万トークンあたり入力$2・出力$10）", "○", "—", "費用が利用量で変動し読みにくい"],
+      ["Team Standard", "法人", "$25（年払いで$20）", "○", "2〜150名", "管理機能。学習利用なし（既定）"],
+      ["Team Premium", "法人", "$125（年払いで$100）", "○", "同上", "Standardの5倍の量。席の混在可"],
+      ["Enterprise", "法人（大規模）", "席料$20（年払い）＋利用量（API料金）", "○", "20名〜", "SSO・監査ログ等の高度な管理"],
+      ["API 従量課金", "開発・自動化", "使った分だけ（例：Sonnet 5.5 は100万トークンあたり入力$2・出力$10）", "○", "—", "利用量で費用が変動する"],
       [{ text: "参考：ChatGPT Business", options: { color: HEX.accent3 } }, "法人", "$25（年払いで$20）【要確認】", "Codex含む【要確認】", "2名〜【要確認】", "OpenAI の法人プラン"],
-    ], { x: MX, y: 1.8, w: CW, colW: [2.1, 1.6, 3.65, 1.35, 1.6, 1.83], rowH: [0.38, 0.5, 0.62, 0.5, 0.5, 0.5, 0.62, 0.5], fontSize: 11 });
-    card(s, MX, 5.98, CW, 0.88);
-    await iconCircle(s, "FaLightbulb", MX + 0.15, 6.08, 0.66, C.accent1, HEX.lt1);
+    ], { x: MX, y: 1.8, w: CW, colW: [2.05, 1.4, 3.75, 1.15, 1.5, 2.28], rowH: [0.36, 0.46, 0.56, 0.56, 0.46, 0.46, 0.56, 0.5], fontSize: 11 });
+    card(s, MX, 6.08, CW, 0.82);
+    await iconCircle(s, "FaLightbulb", MX + 0.15, 6.16, 0.66, C.accent1, HEX.lt1);
     txt(s, [
       { text: "始め方の例：", options: { bold: true, color: C.text2 } },
       { text: "試験導入は Team Standard を2〜3名・月払い（月$50〜75）で開始。クライアント原稿を扱うため、学習利用なし（既定）と管理機能がある法人プランをお勧めします。" },
       { text: `\n${AS_OF}・税抜・USD。最新の料金は公式ページ（https://claude.com/pricing）をご確認ください。`, options: { fontSize: 10, color: C.accent3 } },
-    ], { x: MX + 1.0, y: 6.02, w: CW - 1.15, h: 0.82, fontSize: 12, color: C.text1, valign: "middle", margin: 0, lineSpacing: null });
+    ], { x: MX + 1.0, y: 6.1, w: CW - 1.15, h: 0.78, fontSize: 12, color: C.text1, valign: "middle", margin: 0, lineSpacing: null });
     NOTE(s, "料金の概要です。数字は2026年11月時点の公式ページを元にした税抜・米ドルの目安で、変更されることがあります。個人向けのProは月20ドル、たくさん使う方向けのMaxは月100ドルからです。法人向けのTeamは2名から契約でき、Standard席が月25ドル、年払いなら20ドルです。より多く使う方にはPremium席があり、席の種類は混在できます。Enterpriseは20名からの大規模向けです。API従量課金は使った分だけですが、費用が読みにくいので、最初は定額のプランをお勧めします。参考としてChatGPTの法人プランも並べましたが、こちらは公式ページで確認しきれていないため要確認です。貴社の場合、クライアントの未公開原稿を扱うため、入力内容が学習に使われない法人プランのTeamで、2〜3名から始めるのがよいと考えます。");
   }
 
@@ -522,7 +522,7 @@ const AS_OF = "2026年11月時点";
       { text: "③「Code」タブ → 作業フォルダを選んで開始", options: { breakLine: true } },
       { text: "B. ターミナル（PowerShell）", options: { bold: true, breakLine: true } },
       { text: "① 次のコマンドを実行（管理者権限は不要）", options: { breakLine: true } },
-      { text: "irm https://claude.ai/install.ps1 | iex", options: { fontFace: "Consolas", color: C.accent1, breakLine: true } },
+      { text: "irm https://claude.ai/install.ps1 | iex", options: { fontFace: "Roboto Mono", color: C.accent1, breakLine: true } },
       { text: "　（WinGet の場合：winget install Anthropic.ClaudeCode）", options: { breakLine: true } },
       { text: "② 新しい画面で claude --version を実行して確認", options: { breakLine: true } },
       { text: "③ cd で案件フォルダへ移動し、claude と入力", options: { breakLine: true } },

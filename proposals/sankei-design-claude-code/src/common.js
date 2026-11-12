@@ -6,8 +6,8 @@ const fa = require("react-icons/fa");
 
 const THEME = {
   name: "Sankei Ink",
-  headFontFace: "Meiryo",
-  bodyFontFace: "Meiryo",
+  headFontFace: "Noto Sans JP",
+  bodyFontFace: "Noto Sans JP",
   colors: {
     dk1: "1F2933", // 墨
     lt1: "FFFFFF",
